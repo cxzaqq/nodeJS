@@ -23,7 +23,7 @@ const process = {
       const idx = users.id.indexOf(id);
       if (users.pw[idx] === pw) {
         return res.json({
-          sucess: true,
+          success: true,
         });
       }
     }
