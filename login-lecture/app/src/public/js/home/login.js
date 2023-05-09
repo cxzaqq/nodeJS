@@ -5,6 +5,8 @@ const id = document.querySelector("#id"),
   loginBtn = document.querySelector("#button");
 
 const login = () => {
+  if (!id.value) return alert("input id");
+  if (!pw.value) return alert("input password");
   const req = {
     id: id.value,
     pw: pw.value,
@@ -22,6 +24,7 @@ const login = () => {
       if (res.success) {
         location.href = "/";
       } else {
+        if (res.err) return alert(JSON.stringify(res.err));
         alert(res.msg);
       }
     })
